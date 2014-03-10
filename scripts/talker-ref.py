@@ -23,13 +23,14 @@ def talkerRef():
     i=0.0
     increase=1;
     while not rospy.is_shutdown():
+	## In this test case, we are writing to move the Left Elbow
 	if (increase==1):
         	i=i+1.0
 	else:
 		i=i-1.0
-        refStruct.ref[hubo.LEB]=-i/50
+        refStruct.ref[hubo.LEB]=-i/50 ## fill ref structure
 	rospy.loginfo(refStruct)
-        pub.publish(refStruct)
+        pub.publish(refStruct) # publish it
         rospy.sleep(1)
         if i>10:
 		increase=0
