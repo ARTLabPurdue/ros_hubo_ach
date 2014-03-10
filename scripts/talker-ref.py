@@ -21,15 +21,20 @@ def talkerRef():
     	refStruct.mode.append(0);
     	refStruct.comply.append(0);
     i=0.0
-
+    increase=1;
     while not rospy.is_shutdown():
-        i=i+1.0
-        refStruct.ref[hubo.LSP]=i/100
+	if (increase==1):
+        	i=i+1.0
+	else:
+		i=i-1.0
+        refStruct.ref[hubo.LEB]=-i/50
 	rospy.loginfo(refStruct)
         pub.publish(refStruct)
         rospy.sleep(1)
         if i>10:
-		i=0
+		increase=0
+	if i<0:
+		increase=1
 
 
 if __name__ == '__main__':
