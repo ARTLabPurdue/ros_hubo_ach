@@ -7,22 +7,19 @@ import ach
 import sys
 import time
 
-refChan = ach.Channel(hubo.HUBO_CHAN_REF_NAME)
+stateChan = ach.Channel(hubo.HUBO_CHAN_STATE_NAME)
+stateStruct=Hubo_state();
+
 
 def callback(data):
     rospy.loginfo(rospy.get_name() + ": I heard " +str(data))
-    refAchStruct = hubo.HUBO_REF()
-    for i in range(0,hubo.HUBO_JOINT_COUNT):
-    	refAchStruct.ref[i]=data.ref[i]
-    	refAchStruct.mode[i]=int(data.mode[i])
-    	refAchStruct.comply[i]= int(data.comply[i])
-    refChan.put(refAchStruct)
-
+    stateAchStruct = data
+    
 
 def listenerRef():
-    rospy.init_node('listenerRef', anonymous=True)
-    rospy.Subscriber("ref", Hubo_ref, callback)
-    refChan.flush()
+    rospy.init_node('listenerState', anonymous=True)
+    rospy.Subscriber("state", Hubo_state, callback)
+    stateChan.flush()
     rospy.spin()
 
 

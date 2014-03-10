@@ -99,7 +99,7 @@ def getJointName(joint_number):
 	return 'Invalid Joint'
 
 
-def talkerRef():
+def talkerState():
     pub=[]
     pub = rospy.Publisher('state', Hubo_state)
     rospy.init_node('talkerState')
@@ -150,6 +150,6 @@ def talkerRef():
 
 if __name__ == '__main__':
     try:
-        talkerRef()
+        talkerState()
     except rospy.ROSInterruptException:
         pass
