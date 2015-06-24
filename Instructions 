@@ -1,0 +1,7 @@
+To subscribe to the state of the robot after downloading the package :
+
+Make sure the messages are built
+1) Build in the top level of the catkin workspace using 'catkin_make'
+2) Then go to the devel folder in the catkin workspace and source the setup.bash
+
+This should build the message 
