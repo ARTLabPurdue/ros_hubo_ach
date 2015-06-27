@@ -1,0 +1,4 @@
+<launch>
+        <param name="robot_description" command="cat $(find ros_hubo_ach)/descriptions/huboplus/huboplus.xml" />
+  
+</launch>
