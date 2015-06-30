@@ -109,16 +109,14 @@ include_directories(
 # )
 
 ## Declare a cpp executable
-# add_executable(ros_hubo_ach_node src/ros_hubo_ach_node.cpp)
+add_executable(state_publisher scripts/state_publisher.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(ros_hubo_ach_node ros_hubo_ach_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(ros_hubo_ach_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries(state_publisher ${catkin_LIBRARIES})
 
 #############
 ## Install ##

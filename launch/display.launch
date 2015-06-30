@@ -1,4 +1,7 @@
 <launch>
-        <param name="robot_description" command="cat $(find ros_hubo_ach)/descriptions/huboplus/huboplus.xml" />
-  
+        <!--param name="robot_description" command="cat $(find ros_hubo_ach)/descriptions/huboplus/huboplus.xml" /-->
+        <param name="robot_description" command="cat $(find ros_hubo_ach)/descriptions/hubo/urdf/hubo.urdf" />
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+        <node name="state_publisher" pkg="ros_hubo_ach" type="state_publisher" />
+
 </launch>
