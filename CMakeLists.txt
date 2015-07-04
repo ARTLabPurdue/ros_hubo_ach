@@ -117,7 +117,7 @@ add_executable(state_publisher scripts/state_publisher.cpp)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(state_publisher ${catkin_LIBRARIES})
-
+target_link_libraries(state_publisher ach) ### Added by Debasmit Das
 #############
 ## Install ##
 #############
