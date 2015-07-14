@@ -1,3 +1,6 @@
+/* Created by Debasmit Das
+Node should be running inside the Hubo */
+
 /*Standard Stuff*/
 #include <string>
 #include <stdio.h> 

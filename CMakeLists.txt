@@ -121,6 +121,10 @@ target_link_libraries(state_publisher ach) ### Added by Debasmit Das
 #############
 ## Install ##
 #############
+add_executable(ref_listener scripts/ref_listener.cpp)
+target_link_libraries(ref_listener ${catkin_LIBRARIES})
+target_link_libraries(ref_listener ach) ### Added by Debasmit Das
+
 
 # all install targets should use catkin DESTINATION variables
 # See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html
