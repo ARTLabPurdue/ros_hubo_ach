@@ -62,9 +62,6 @@ int main(int argc, char** argv) {
     }
 
 
-    //double posLEB = H_state.joint[LEB].pos;
-    //cout<<posLEB<<endl;
-    
     double angle=0;
 
     /* robot joints set manually
@@ -159,13 +156,6 @@ int main(int argc, char** argv) {
         joint_pub.publish(joint_state);
         broadcaster.sendTransform(odom_trans);
 
-        // Create new robot state
-        //tilt += tinc;
-        //if (tilt<-.5 || tilt>0) tinc *= -1;
-        //height += hinc;
-        //if (height>.2 || height<0) hinc *= -1;
-        //swivel += degree;
-        //angle += degree/4;
 
         // This will adjust as needed per iteration
         loop_rate.sleep();

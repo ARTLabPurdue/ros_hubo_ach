@@ -30,8 +30,7 @@ This node should be running inside the Hubo
 
 using namespace std;
 
-double posHNP,posLSP,posLSR,posLSY,posLEBP,posLWY,posLWP,posRSP,posRSR,posRSY,posREBP,posRWY,posRWP,posHPY,posLHY,posLHR,posLHP,posLKNP,posLAP,posLAR,posRHY,posRHR,posRHP;
-double posRKNP,posRAP,posRAR;
+
 int r;
 ach_channel_t chan_hubo_ref; // Feed-Forward (Reference)
 struct hubo_ref H_ref;
